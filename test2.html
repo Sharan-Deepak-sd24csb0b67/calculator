@@ -1,0 +1,143 @@
+<html>
+<head> <h1 style="text-align:center; color:rgb(41, 41, 31); color:rgb(33, 33, 100);background-color: rgba(240, 248, 255,0.5);">Calculator</h1>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend+Giga:wght@100..900&display=swap" rel="stylesheet">  
+</head>
+
+<body style="
+background-image: url(https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);">
+<div id="calculator">
+  <input id = "display" type="text" value="0" readonly>
+  <div id="operations">
+    <div><button id="w" value="7">7</button></div>
+    <div><button id="w" value="8">8</button></div>
+    <div><button id="w" value="9">9</button></div>
+    <div><button id="we" value="/">/</button></div>
+
+  <div><button id="w" value="4">4</button></div>
+  <div><button id="w" value="5">5</button></div>
+  <div><button id="w" value="6">6</button></div>
+  <div><button id="we" value="*">X</button></div>
+  <div ><button id="w" value="1">1</button></div>
+  <div><button id="w" value="2">2</button></div>
+  <div><button id="w" value="3">3</button></div>
+  <div><button id="we" value="-">-</button></div>
+  <div><button id="w" value="0">0</button></div>
+  <div><button id="w" value=".">.</button></div>
+  <div><button style="width: 2fr;" id="wa" value="=">=</button></div>
+  <div></div>
+  <div><button id="we" value="+">+</button></div>
+
+  <div><button style="background-color: rgb(243, 70, 70);" id="w" value="C">C</button></div>
+</div>
+</div>
+    
+
+<form>
+  
+</form>
+<style>
+#calculator {
+  max-width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  width: 400px;
+}
+body {
+  margin:0px;
+}
+#display {
+  border-color: yellow;
+  background-color: yellow;
+  border-bottom:0px;
+  border-style: solid;
+  border-top-right-radius: 25px;
+  border-top-left-radius: 25px;
+  justify-content: center;
+  text-align: right;
+  font-size: 40px;
+  width: 104%;
+  color:white;
+  padding:5px;
+  background-color: rgb(41, 41, 151);
+}
+
+* {
+  font-family: "Lexend Giga";
+}
+#w,#we {
+font-size: 40px;
+width: 100%;
+background-color: rgb(100, 192, 187);
+border-radius: 15px;
+border-style: solid;
+transition: all 0.1s;
+}
+#we {
+  background-color: yellow;
+}
+#we:hover {
+  background-color: rgba(255, 255, 0,0.5)
+}
+#wa {
+font-size: 40px;
+background-color: rgb(21, 195, 207);
+width: 200%;
+border-radius: 15px;
+border-style: solid;
+}
+#wa:hover {
+  background-color: rgba(21, 195, 207,0.5);
+}
+#w:hover {
+  background-color: rgba(100, 192, 187,0.5);
+}
+#operations {
+  border-color: yellow;
+  background-color: yellow;
+  border-style: solid;
+  border-top:0px;
+  border-bottom-right-radius: 25px;
+  border-bottom-left-radius: 25px;
+  padding: 5px;
+  width: 100%;
+  font-size: 40px;
+  display:grid; 
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(4, 10, 63);
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  row-gap: 5px;
+  column-gap: 5px;
+}
+</style>
+
+<script>
+  let a = 0;
+  hmm = document.getElementById("display");
+
+
+  
+  const button = document.querySelectorAll('button').forEach(button => 
+    {
+      button.addEventListener("click", () => 
+        {
+          if (button.value=='C')
+            hmm.value="";
+          else if (button.value!='=')
+            hmm.value=(hmm.value+button.value);
+          else
+          {
+            try {hmm.value=eval(hmm.value);}
+            catch {alert("Invalid Expression");}
+          }
+            
+        }
+      );
+    }
+  );
+  
+</script>
+
+</body>
